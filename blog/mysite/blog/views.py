@@ -68,7 +68,7 @@ def post_publish(request, pk):
 
 
 @login_required
-def add_comment_post(request, pk):
+def add_comment_to_post(request, pk):
 	post = get_object_or_404(Post, pk=pk)
 	if request.method == 'POST':
 		form = CommentForm(request.POST)
@@ -76,7 +76,7 @@ def add_comment_post(request, pk):
 			comment = form.save(commit=False)
 			comment.post = post
 			comment.save()
-			retun redirect('post_detail', pk=post.pk)
+			return redirect('post_detail', pk=post.pk)
 	else:
 		form = CommentForm()
 	return render(request, 'blog/comment_form.html', {'form': form})
