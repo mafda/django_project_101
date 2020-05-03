@@ -1,51 +1,48 @@
 from django.db import models
-
-# Create your models here.
 from django.utils import timezone
-# from django.core.urlresolvers import reverse
 from django.urls import reverse
 
 
 class Post(models.Model):
-	author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-	title = models.CharField(max_length=200)
-	text = models.TextField()
-	created_date = models.DateTimeField(default=timezone.now())
-	published_date = models.DateTimeField(blank=True, null=True)
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    title = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
 
-	def publish(self):
-		self.published_date = timezone.now()
-		self.save()
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
 
 
-	def approve_comments(self):
-		return self.comments.filter(approve_comments=True)
+    def approve_comments(self):
+        return self.comments.filter(approve_comments=True)
 
 
-	def get_absolute_url(self):
-		return reverse('post_detail', kwargs={'pk':self.pk})
+    def get_absolute_url(self):
+        return reverse('post_detail', kwargs={'pk':self.pk})
 
 
-	def __str__(self):
-		return self.title
+    def __str__(self):
+        return self.title
 
 
 
-class Comments(models.Model):
-	post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE)
-	author = models.CharField(max_length=200)
-	text = models.TextField()
-	created_date = models.DateTimeField(default=timezone.now())
-	approved_comment = models.BooleanField(default=False)
+class Comment(models.Model):
+    post = models.ForeignKey('blog.Post', related_name='comments', on_delete=models.CASCADE)
+    author = models.CharField(max_length=200)
+    text = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    approved_comment = models.BooleanField(default=False)
 
 
-	def approve(self):
-		self.approved_comment = True
-		self.save()
+    def approve(self):
+        self.approved_comment = True
+        self.save()
 
-	def get_absolute_url(self):
-		return reverse('post_list')
+    def get_absolute_url(self):
+        return reverse('post_list')
 
-	def __str__(self):
-		return self.text
+    def __str__(self):
+        return self.text
