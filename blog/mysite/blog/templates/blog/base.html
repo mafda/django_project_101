@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
   <title>Blog</title>
@@ -14,10 +15,14 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/blog.css' %}">
 
   <!-- Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Russo+One&display=swap" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Russo+One&display=swap" rel="stylesheet">
+
+   <!-- fontawesome -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
 </head>
-<body class="loader">
+<body>
+<!-- <body class="loader"> -->
 
   <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light techfont">
@@ -33,26 +38,16 @@
       </div>
     </div>
 
-    <ul class="nav justify-content-end">
+    <div class="navbar-nav justify-content-end">
       {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'post_new' %}">New Post</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
-        </li>
-        <li class="nav-item">
-          <a>Welcome: {{user.username}}</a>
-        </li>
-        {% else %}
-          <li class="nav-item">
-            <a href="{% url 'login' %}"><span class="glyphicon glyphicon-user"></span></a>
-          </li>
+        <a class="nav-link" href="{% url 'post_new' %}">New Post</a>
+        <a class="nav-link" href="{% url 'post_draft_list' %}">Drafts</a>
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+        <a>Welcome: {{ user.username }}</a>
+      {% else %}
+          <a href="{% url 'login' %}"><span class="fas fa-user"></span></a> 
       {% endif %}
-    </ul>
+    </div>
   </nav>
 
   <!-- CONTENT BLOCK -->
@@ -62,13 +57,11 @@
       <div class="col-md-8">
         <div class="blog_posts">
           {% block content %}
+
           {% endblock %}
         </div>
-        
       </div>
-      
     </div>
-    
   </div>
 
 </body>
