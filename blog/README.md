@@ -17,6 +17,7 @@ The following technologies were used in the project:
 
 ## License
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-red.svg)](https://opensource.org/licenses/MIT)
 
 ---
 
