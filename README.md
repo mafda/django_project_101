@@ -1,4 +1,4 @@
-# Django Project
+# Django Projects
 
  Build websites with HTML, CSS, Bootstrap, Python 3, and Django.
 

@@ -8,7 +8,7 @@ The following technologies were used in the project:
 * [Bootstrap 4](https://getbootstrap.com/)
 * [MediumEditor](https://github.com/yabwe/medium-editor)
 * [Fontawesome](https://fontawesome.com/)
-* [Fonts](https://fonts.google.com)
+* [Google Fonts](https://fonts.google.com)
 	* Russo One
 	* Montserrat
 
