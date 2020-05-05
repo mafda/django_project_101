@@ -6,6 +6,8 @@
 
 * [Blog](https://github.com/mafda/django_project_101/tree/master/blog)
 
+![blog django](blog/img/post.png)
+
 * Social Media (:construction: under construction)
 
 ---
