@@ -25,14 +25,21 @@
     {% for comment in post.comments.all %}
     <br>
       {% if user.is_authenticated or comment.approved_comment %}
-        {{ comment.created_date }}
+        <p class="date_comment">{{ comment.created_date }}</p>
+
           {% if not comment.approved_comment %}
             <a class="btn btn-light" href="{% url 'comment_remove' pk=comment.pk %}"><span class="fas fa-times"></span></a>
             <a class="btn btn-light" href="{% url 'comment_approve' pk=comment.pk %}"><span class="fas fa-check"></span></a>
           {% endif %}
 
-          <p>{{ comment.text|safe|linebreaks }}</p>
-          <p>Posted by: {{ comment.author }}</p>
+          <!-- <p>{{ comment.text|safe|linebreaks }}</p>
+          <p>Posted by: {{ comment.author }}</p> -->
+
+          <blockquote class="blockquote">
+            <p class="mb-0">{{ comment.text|safe|linebreaks }}</p>
+            <footer class="blockquote-footer">Posted by: <cite title="Source Title">{{ comment.author }}</cite></footer>
+          </blockquote>
+
       {% endif %}
       {% empty %}
       <p>No Comments!</p>
