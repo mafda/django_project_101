@@ -4,10 +4,10 @@ In this project we will be creating a *blog*. This *blog* will be a multi-user b
 
 ## Environment
 
-1. Using python `venv` for creation of virtual environments:
+1. In `mysite` folder
 
 ```
-	python -m venv .venv
+	cd mysite
 ```
 
 2. Create virtual environment:
