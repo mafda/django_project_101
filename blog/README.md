@@ -1,5 +1,7 @@
 # Blog - Django Project
 
+In this project we will be creating a *blog*. This *blog* will be a multi-user blog, rather than a personal blog. 
+
 ## Development environment
 
 The following technologies were used in the project:
@@ -7,12 +9,16 @@ The following technologies were used in the project:
 * [Django 3.0.3](https://www.djangoproject.com/)
 * [Bootstrap 4](https://getbootstrap.com/)
 * [MediumEditor](https://github.com/yabwe/medium-editor)
-* [Fontawesome](https://fontawesome.com/)
+* [Font Awesome](https://fontawesome.com/)
 * [Google Fonts](https://fonts.google.com)
 	* Russo One
 	* Montserrat
 
 ## Results Visualization
+
+![blog django](img/blog_django_1.png)
+
+![blog django](img/blog_django_2.png)
 
 
 ## License
