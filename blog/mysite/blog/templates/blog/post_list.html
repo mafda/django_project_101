@@ -2,18 +2,22 @@
 
 {% block content %}
 
+  <h1 class="posttitle">Posts</h1>
+
   <div class="centerstage">
+
     {% for post in post_list %}
 
-    <div class="post">
-      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <div class="date">
-        <p>Published on: {{ post.published_date|date:"d-M-Y" }}</p>
+    <div class="card listcard">
+      <div class="card-body">
+        <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+        <h6 class="card-subtitle mb-2 text-muted">Published on: {{ post.published_date|date:"d-M-Y" }}</h6>
+        <a href="{% url 'post_detail' pk=post.pk%}" class="card-link">Comments: {{ post.approve_comment.count }}</a>
       </div>
-      <a href="{% url 'post_detail' pk=post.pk%}">Comments: {{ post.approve_comment.count }}</a>
     </div>
 
     {% endfor %}
+    
   </div>
 
 {% endblock %}

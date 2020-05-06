@@ -2,12 +2,16 @@
 
 {% block content %}
 
+  <h1 class="posttitle">Drafts</h1>
+
   {% for post in post_list %}
 
-    <div class="post">
-      <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-      <p class="date">created: {{ post.created_date|date:"d-M-Y H:i:s" }}</p>
-      <p class="postcontent">{{ post.text|safe|truncatechars:200 }}</p>
+    <div class="card draftcard">
+      <div class="card-body">
+        <h2 class="card-title"><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h5>
+        <h6 class="card-subtitle mb-2 text-muted">created: {{ post.created_date|date:"d-M-Y H:i:s" }}</h6>
+        <p class="card-text postcontent">{{ post.text|safe|truncatechars:200 }}</p>
+      </div>
     </div>
 
   {% endfor %}
