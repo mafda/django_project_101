@@ -16,11 +16,11 @@ The following technologies were used in the project:
 
 ## Results Visualization
 
-* Home page and no login user:
+* Home page and login user:
 
 ![blog django](img/blog_django_1.png)
 
-* Login user and create/edit/delete/comment new post:
+* Create/save/edit/delete/comment new post:
 
 ![blog django](img/blog_django_2.png)
 
