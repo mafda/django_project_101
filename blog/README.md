@@ -4,7 +4,7 @@ In this project we will be creating a *blog*. This *blog* will be a multi-user b
 
 ## Environment
 
-1. In `mysite` folder
+1. In `mysite` folder:
 
 ```
 	cd mysite
@@ -19,7 +19,7 @@ In this project we will be creating a *blog*. This *blog* will be a multi-user b
 3. Activate environment:
 
 ```
-	source ./path/to/new/virtual/environment/bin/activate
+	source /path/to/new/virtual/environment/bin/activate
 ```
 
 4. Install `requirements.txt` file:
