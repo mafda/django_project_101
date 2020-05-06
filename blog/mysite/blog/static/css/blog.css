@@ -1,8 +1,9 @@
 .techfont {
   font-family: 'Russo One', sans-serif;
-  font-size: 1.5em;
+  font-size: 1.4em;
   margin-bottom: 10px;
 }
+
 .bigbrand {
   font-size: 1.5em;
 }
@@ -13,62 +14,55 @@
 }
 
 .postdate {
-  text-align: center;
+  text-align: left;
 }
 
 .posttitle {
   font-family: 'Russo One', sans-serif;
   font-size: 3em;
-  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .postcontent {
   font-family: 'Montserrat';
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .btn-comment {
   position: absolute;
-  right: 0px;
+  right: 20px;
 }
 
-
-/* hue loader */
-
-.loader {
-  filter:hue-rotate(0deg);
-  color:linear-gradient(45deg,#0f8,#08f);
-  /*background:linear-gradient(45deg,#0f8,#08f);*/
-  animation:hue 10000ms infinite linear;
- 
+.listcard {
+  margin-bottom: 20px;
+  width: 30rem;
 }
 
-@keyframes spinify {
-  0% {
-    transform: translate(0px,0px);
-    
-  }
-  33% {
-    transform: translate(0px,24px);
-    border-radius:100%;
-    width:10px;
-    height:10px;
- 
-  }
-   66% {
-    transform:translate(0px,-16px);
-  }
-  
-   88% {
-    transform:translate(0px,4px);
-     
-  }
-  100% {
-    transform:translate(0px,0px);
-  }
+.draftcard {
+  margin-bottom: 20px;
+  width: 30rem;
 }
 
-@keyframes hue{
-  0%{filter: hue-rotate(0deg);}
-  100%{filter:hue-rotate(360deg);}  
+.date_comment {
+  font-size: 0.8em;
+  color: gray;
+}
+
+.postform {
+  font-family: 'Montserrat';
+  font-size: 1.2em;
+  width: 480px;
+  padding: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
+}
+
+.posttext{
+  font-family: 'Montserrat';
+  font-size: 1.2em;
+  width: 480px;
+  padding: 10px;
+  border: 1px solid #c0c0c0;
+  border-radius: 5px;
 }
